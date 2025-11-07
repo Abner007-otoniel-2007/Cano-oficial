@@ -1,0 +1,185 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANO-Un desarrollo sostenible</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Estilos.css">
+    <link rel="stylesheet" href="Contacto.css">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-juancito fixed-top">
+        <div class="container">
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <a class="navbar-brand">CANO - Un desarrollo sostenible</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Pagina_principal.html">Página principal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Menú-usuario.html">Nuestro producto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron  text-dark text-center py-5">
+        <div class="container">
+            <h1 class="display-4">"Innovación y Compromiso con la Movilidad de los Salvadoreños"</h1>
+            <p class="lead">Transporte público más rápido, seguro y eficiente</p>
+        </div>
+    </header>
+
+    <main>
+
+    
+ <section id="contacto" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: white;">Contacto</h2>
+        <p class="text-center mb-5" style="color:white;">Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con nosotros. Estaremos encantados de ayudarte.</p>
+
+        <!-- Formulario con Formspree - CORREGIDO -->
+        <form action="https://formspree.io/f/xnnbwvpk" method="POST" class="bg-white p-4 rounded shadow-sm" id="contact-form">
+            <!-- Configuración de Formspree -->
+            <input type="hidden" name="_subject" value="Nuevo mensaje de contacto desde CANO">
+            <input type="hidden" name="_next" value="gracias.html">
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+            </div>
+            
+            <!-- Mensaje de estado -->
+            <div id="form-status" class="mb-3" style="display: none;"></div>
+            
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                    <span id="btn-text">Enviar Mensaje</span>
+                    <span id="btn-spinner" class="spinner-border spinner-border-sm ms-2" style="display: none;"></span>
+                </button>
+            </div>
+        </form>
+
+        <!-- Información de contacto -->
+        <div class="mt-5">
+            <h4 class="text-center mb-4" style="color: white;">Otra forma de contactarnos:</h4>
+            <ul class="list-unstyled text-center">
+                <li style="color: white;"><i class="bi bi-telephone-fill"></i> Teléfono: +503 0945-9856</li>
+                <li style="color: white;">
+                    <i class="bi bi-envelope-fill"></i> 
+                    <a href="mailto:abner.gonzalez@oportunidades.org.sv?subject=Contacto desde CANO" style="color: #87CEEB; text-decoration: none;">
+                        Correo: abner.gonzalez@oportunidades.org.sv
+                    </a>
+                </li>
+                <li style="color: white;"><i class="bi bi-geo-alt-fill"></i> Dirección: Santa Ana, El Salvador</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript para mejorar la experiencia del usuario -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const formStatus = document.getElementById('form-status');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Mostrar estado de carga
+        submitBtn.disabled = true;
+        btnText.textContent = 'Enviando...';
+        btnSpinner.style.display = 'inline-block';
+        formStatus.style.display = 'none';
+
+        // Crear FormData
+        const formData = new FormData(form);
+
+        // Enviar a Formspree
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Éxito
+                formStatus.innerHTML = '<div class="alert alert-success">¡Mensaje enviado exitosamente! Te responderemos pronto.</div>';
+                formStatus.style.display = 'block';
+                form.reset();
+            } else {
+                return response.json().then(data => {
+                    if (Object.hasOwnProperty.call(data, 'errors')) {
+                        throw new Error(data["errors"].map(error => error["message"]).join(", "));
+                    } else {
+                        throw new Error("Hubo un error al enviar el mensaje");
+                    }
+                });
+            }
+        }).catch(error => {
+            // Error
+            formStatus.innerHTML = '<div class="alert alert-danger">Error: ' + error.message + '. Por favor, intenta nuevamente.</div>';
+            formStatus.style.display = 'block';
+        }).finally(() => {
+            // Restaurar botón
+            submitBtn.disabled = false;
+            btnText.textContent = 'Enviar Mensaje';
+            btnSpinner.style.display = 'none';
+        });
+    });
+});
+
+// Eliminar la función enviarCorreo() ya que no la necesitamos
+</script>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Función que se activa cuando se hace scroll
+    window.onscroll = function() {
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; // Obtiene cuántos píxeles ha bajado
+        let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight; // Calcula la altura de la página menos la altura del navegador
+        let progress = (scrollTop / scrollHeight) * 100; // Convierte el scrolleo en porcentaje
+        document.getElementById("progress-bar").style.width = progress + "%"; // Ajusta la barra de progreso
+    };
+</script>
+
+    
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2025 CANO. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+    
+</body>
+</html>

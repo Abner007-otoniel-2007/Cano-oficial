@@ -1,0 +1,170 @@
+:root {
+    --rojo-juancito: rgb(0, 0, 0);
+    /* Design tokens basados en la paleta existente */
+    --color-primary: #006699;
+    --color-accent: #FFC107;
+    --color-bg: #000000;
+    --color-surface: #446888;
+    --color-section-title-bg: #95a5a6;
+    --color-text: #ffffff;
+    --color-text-secondary: #D9E6F2;
+    --color-border: #ececec;
+    --radius-md: 10px;
+    --shadow-md: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.bg-juancito {
+    background-color: var(--rojo-juancito);
+}
+
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    z-index: 1000;
+}
+
+#progress-bar {
+    position: relative;
+    height: 5px;
+    width: 0%;
+    background: #00ff0d;
+}
+
+body{
+    padding-top: 50px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.6;
+}
+
+header{
+    background-color: transparent;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+.display-4{
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.lead{
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+main{
+    background-color: var(--color-bg);
+}
+
+#CANO h1{
+    background-color: var(--color-section-title-bg);
+    padding-bottom: 10px;
+    text-align: center;
+    color: #000000;
+}
+
+#CANO p{
+    background-color: var(--color-surface);  
+    margin-right: 500px;
+    margin-left: 100px;
+    margin-top: 70px;
+    border: 2px solid var(--color-border);   
+    border-radius: 8px;           
+    padding: 10px;
+    font-size: 16px;
+    color: var(--color-text);
+    text-align:justify;
+}
+
+@media (max-width: 768px) {
+    #CANO p {
+        margin-right: 5%;   
+        margin-left: 5%;    
+        margin-top: 3%;     
+        font-size: 14px;   
+    
+    }
+}
+
+#Historia h1{
+    text-align: center;
+    color: var(--color-accent);
+}
+
+#Historia p{
+    margin-top: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    #Historia p {
+        text-align: justify;
+        margin-right: 5%;   
+        margin-left: 5%;    
+        margin-top: 3%;     
+        font-size: 14px;   
+    
+    }
+}
+
+hr{
+    color: #ffffff;
+    width: 100%;
+    border-width: 20px;
+}
+
+section h1, p{
+    color: var(--color-text);
+}
+
+section h5{
+    color: var(--color-accent);
+}
+
+/* Tipografía de títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    letter-spacing: .2px;
+}
+
+/* Navbar profesional con sombra sutil */
+.navbar.bg-juancito {
+    background-color: var(--rojo-juancito) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,.35);
+    -webkit-backdrop-filter: saturate(120%) blur(2px);
+    backdrop-filter: saturate(120%) blur(2px);
+}
+
+/* Hero moderno */
+header.jumbotron {
+    background: linear-gradient(180deg, var(--color-primary) 0%, #0b4f73 100%);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    overflow: hidden; /* evita artefactos por colapso de márgenes */
+}
+
+/* Asegurar legibilidad del texto del hero (sobrescribe text-dark) */
+header.jumbotron .display-4 {
+    color: var(--color-accent) !important;
+    margin: 0; /* evita margen visible distinto al fondo del hero */
+    padding: 0; /* el espaciado se controla con el padding del header */
+}
+header.jumbotron .lead {
+    color: var(--color-text-secondary) !important;
+    margin: 0; /* asegura consistencia de fondo en el hero */
+}
+
+/* Tarjetas de personal */
+.shadow {
+    box-shadow: var(--shadow-md) !important;
+}
+.rounded {
+    border-radius: var(--radius-md) !important;
+}

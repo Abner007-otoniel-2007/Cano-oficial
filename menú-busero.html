@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANO-Un desarrollo sostenible</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Estilos.css">
+    <link rel="stylesheet" href="Menú.css">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-juancito fixed-top">
+        <div class="container">
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <a class="navbar-brand">CANO - Un desarrollo sostenible</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Pagina_principal-busero.html">Página principal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Buses">¿Qué hay en CANO?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Características">Características de CANO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-dark text-center py-5">
+        <div class="container">
+            <h1 class="display-4">"Innovación y Compromiso con la Movilidad de los Salvadoreños"</h1>
+            <p class="lead">Transporte público más rápido, seguro y eficiente</p>
+        </div>
+    </header>
+    
+    <main>
+        <div id="mapa" class="text-center mb-5">
+            <h1>Rutas disponibles</h1>
+        </div>
+
+        <!-- Container para el mapa y la caja de información -->
+        <div class="container">
+            <div class="row">
+ 
+
+                <!-- Caja de información en la otra columna (4 partes del grid) -->
+                <div class="col-md-4 mx-auto" >
+                    <div class="p-4 shadow rounded border border-3 border-light" style="background-color: #446888; margin-top: 100px;">
+                        <ul class="Rutas">
+                            <li><a href="218.html">Ruta 218</a></li>
+                            <li><a href="210.html">Ruta 210</a></li>
+                            <li><a href="214.html">Ruta 214</a></li>
+                            <li><a href="202.html">Ruta 202</a></li>
+                            <li><a href="51-F.html">Ruta 51-F</a></li>
+                            <li><a href="51-D.html">Ruta 51-D</a></li>
+                        </ul>
+                        
+                    </div>
+                    <p style="margin-top: 50px;">Aquí puedes seleccionar tu ruta preferida y ver la información de esta.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+   <section id="Buses">
+    <h2 style="color: #FFD700; margin-top: 100px; text-align: center;">
+        ¡Bienvenido a CANO!<br> Lugar donde podrás estar al tanto de tu transporte</h2>
+
+    <p>En nuestra página, puedes consultar la ubicación exacta de los autobuses que circulan por la ciudad, todo en tiempo real. Con nuestra herramienta, tendrás acceso a información actualizada para que puedas planificar tu viaje de manera más eficiente y cómoda.</p>
+    <h5 style="color: #FFD700; text-align: center;">En CANO te ofrecemos:</h5>
+    <p style="font-weight: bolder;">--Ubicación en tiempo real:</p><p> Gracias a la tecnología GPS, cada autobús está monitoreado constantemente, lo que nos permite mostrar su ubicación exacta sobre el mapa de la ciudad. Verás los autobuses en movimiento y en tiempo real, lo que te permitirá saber con precisión dónde se encuentra tu transporte.</p>
+    <p style="font-weight: bolder;">--Rutas y paradas:</p><p> Puedes elegir la ruta de autobús que te interesa y ver su recorrido completo. Además, te mostramos las paradas en tiempo real y la hora estimada de llegada del autobús a cada una de ellas.</p>
+    <p style="font-weight: bolder;">--Actualización constante:</p><p> La información en el mapa se actualiza de forma dinámica, lo que significa que podrás ver los cambios en tiempo real, como retrasos o desvíos, para que siempre estés al tanto de cualquier novedad.</p>
+    <p style="font-weight: bolder;">--Planificación de tu viaje:</p><p> Con nuestro sistema, puedes optimizar tu tiempo. Si estás esperando un autobús, podrás ver exactamente cuándo llegará, lo que te permite reducir los tiempos de espera y ajustar tus planes de acuerdo con la información más precisa.</p>
+    </section>
+
+    <hr class="mt-5">
+
+
+    <section id="Características">
+    <section class="container my-5">
+        <h1 class="text-center mb-5 " style="color:white;">Características de CANO</h1>
+
+    <div class="row align-items-center" >
+        <div class="col-md-6">
+            <img src="mapa.jpg" alt="Mapa en Tiempo Real" class="img-fluid rounded" width="700px">
+        </div>
+        <div class="col-md-6">
+            <div class="p-4 shadow rounded border border-3 border-light" style="background-color: #446888;">
+                <h5>Mapa en Tiempo Real</h5>
+                <p> - Muestra la ubicación del bus en tiempo real.<br>
+                    - Permite ver cuánto tiempo falta para que llegue a una parada específica.<br>
+                    - Se puede seleccionar una línea de bus o buscar por número de ruta.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="row align-items-center mb-5 mt-5 flex-md-row-reverse" >
+        <div class="col-md-6">
+            <img src="Bus.jpg" alt="Tiempo de Llegada" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <div class="p-4 shadow rounded border border-3 border-light" style="background-color: #446888;">
+                <h5>Tiempo de Llegada Estimado</h5>
+                <p> - Algoritmo que calcula el tiempo estimado de llegada a cada parada.<br>
+                    - Toma en cuenta factores como tráfico y velocidad promedio del bus.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="row align-items-center" style="margin-top: 100px; margin-bottom: 100px; ">
+        <div class="col-md-6">
+            <img src="Usuarios.png" alt="Mapa en Tiempo Real" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <div class="p-4 shadow rounded border border-3 border-light" style="background-color: #446888;">
+                <h5>Comentarios de usuarios</h5>
+                <p> - Los pasajeros pueden dejar comentarios sobre el estado del bus.<br>
+                    - Posibles etiquetas: Lleno, Vacío, Retrasado, Problema Mecánico, Conductor Imprudente, Clima en la Ruta.<br>
+                    - Los comentarios aparecen en la app y se pueden calificar como “útiles” o “irrelevantes”.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="row align-items-center flex-md-row-reverse" style="margin-top: 100px; margin-bottom: 100px!;">
+        <div class="col-md-6">
+            <img src="Comunidad.png" alt="Tiempo de Llegada" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <div class="p-4 shadow rounded border border-3 border-light" style="background-color:#446888;">
+                <h5>Modo comunidad</h5>
+                <p> - Sistema de reputación para usuarios que aportan información confiable.<br>
+                    - Se pueden seguir rutas favoritas y ver qué dicen otros pasajeros frecuentes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+<hr class="mt-5">
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Función que se activa cuando se hace scroll
+        window.onscroll = function() {
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; // Obtiene cuántos píxeles ha bajado
+            let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight; // Calcula la altura de la página menos la altura del navegador
+            let progress = (scrollTop / scrollHeight) * 100; // Convierte el scrolleo en porcentaje
+            document.getElementById("progress-bar").style.width = progress + "%"; // Ajusta la barra de progreso
+        };
+    </script>
+
+<footer class="bg-dark text-white py-3">
+    <div class="container text-center">
+        <p>&copy; 2025 CANO. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>
