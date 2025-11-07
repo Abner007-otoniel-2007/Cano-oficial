@@ -1,0 +1,48 @@
+:root {
+    --rojo-juancito: rgb(0, 0, 0);
+}
+
+.bg-juancito {
+    background-color: var(--rojo-juancito);
+}
+
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    z-index: 1000;
+}
+
+#progress-bar {
+    height: 5px;
+    width: 0%;
+    background: #00ff0d;
+}
+
+body{
+    padding-top: 50px;
+}
+
+header, .display-4{
+    background-color: transparent;
+}
+
+.lead{
+    color: #D9E6F2;
+    font-weight: bold;
+}
+
+main{
+    background-color: #000000;
+}
+
+/* Asegurar contraste en tarjetas blancas del formulario */
+.bg-white {
+    color: #212529; /* texto oscuro por defecto dentro de tarjetas blancas */
+}
+.bg-white .form-label {
+    color: #212529; /* labels visibles sobre fondo blanco */
+}
