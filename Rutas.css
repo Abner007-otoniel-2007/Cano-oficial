@@ -1,0 +1,73 @@
+:root {
+    --rojo-juancito: rgb(0, 0, 0);
+}
+
+.bg-juancito {
+    background-color: var(--rojo-juancito);
+}
+
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    z-index: 1000;
+}
+
+#progress-bar {
+    height: 5px;
+    width: 0%;
+    background: #00ff0d;
+}
+
+body{
+    padding-top: 50px;
+}
+
+header, .display-4{
+    background-color: transparent;
+    color: #FFC107;
+    font-weight: bold;
+}
+
+.lead{
+    color: #D9E6F2;
+    font-weight: bold;
+}
+
+main{
+    background-color: #000000;
+}
+
+h1{
+    background-color: #95a5a6;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #000000;
+}
+
+
+main p{
+    color: white;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    main p {
+        margin-right: 5%;   
+        margin-left: 5%;    
+        margin-top: 3%;     
+        font-size: 14px;   
+    
+    }
+}
+
+hr{
+    color: #ffffff;
+    width: 100%;
+    border-width: 20px;
+}
